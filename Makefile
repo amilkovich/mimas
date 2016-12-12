@@ -7,7 +7,7 @@ all: mimas.bin
 mimas.bin: $(wildcard *.v)
 	$(ISE_BIN)/xst -intstyle ise -ifn mimas.xst -ofn mimas.syr && \
 	$(ISE_BIN)/ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc \
-	mimas.ucf -p xc6slx16-csg324-2 mimas.ngc mimas.ngd && \
+	mimas.ucf -p xc6slx9-tqg144-3 mimas.ngc mimas.ngd && \
 	$(ISE_BIN)/map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off \
 	-ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off \
 	-mt off -ir off -pr off -lc off -power off -o mimas_map.ncd \
